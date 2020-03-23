@@ -2,18 +2,19 @@ import React, {Component} from 'react';
 import {Text, View, TextInput} from 'react-native'
 
 function InputLine(props) {
+  const postText = props.postText ? props.postText : ''
+
   return (
     <View style={{
       flexDirection: 'row',
-      height: 40,
-      backgroundColor: 'steelblue',
-      justifyContent: 'flex-start'
+      justifyContent: 'flex-start',
+      alignItems: 'center'
     }}>
       <Text style={{
         fontSize: 20
       }}>
-        What is your dick size?
-      </Text>
+        {props.promptText + "      "}
+      </Text>      
 
       <TextInput
         keyboardType={'numeric'}
@@ -27,7 +28,7 @@ function InputLine(props) {
       <Text style={{
         fontSize: 20
       }}>
-        inches
+        {"    " + postText}
       </Text>
     </View>
   )
@@ -47,7 +48,8 @@ class InputScreen extends Component {
       return (
         <View style={viewStyle}>
           <Text style={headerStyle}>How do I compare?</Text>
-          <InputLine />
+          <InputLine promptText={"How big is your dick?"} postText={"inches"} />
+          <InputLine promptText={"How many men are in the room?"} />
         </View>
       )
     }
