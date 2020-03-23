@@ -17,6 +17,7 @@ function InputLine(props) {
       </Text>      
 
       <TextInput
+        onChangeText={text => this.props.onChangeText(text)}
         keyboardType={'numeric'}
         style={{
           borderColor: 'gray',
