@@ -5,7 +5,7 @@ import styles from '../components/styles.js'
 export default function HomeScreen({ navigation }) {
   return(
     <View style={styles.container}>
-      <Text style={styles.header}>How do I compare?</Text>
+      <Text style={styles.header}>What, me worry?</Text>
       <Button
         title="Let's find out!"
         onPress={() => navigation.navigate('Input')} 
