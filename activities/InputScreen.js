@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, TextInput} from 'react-native'
+import {Text, View, StyleSheet} from 'react-native'
 import InputLine from '../components/InputLine.js'
 
 class InputScreen extends Component {
@@ -25,33 +25,45 @@ class InputScreen extends Component {
     }))
   }
 
-  render () {
-      const viewStyle = {
-        alignItems: 'center',
-        justifyContent: 'space-around'
-      }
-
-      const headerStyle = {
-        fontSize: 32,
-        fontWeight: 'bold',
-      }
+  render () { 
     return (
-      <View style={viewStyle}>
-        <Text style={headerStyle}>How do I compare?</Text>
-        <InputLine
-          onChangeText={this.setSize}
-          promptText={'How big is your dick?'}
-          postText={'inches'}
-        />
-        <InputLine
-          onChangeText={this.setCount}
-          promptText={'How many men are in the room?'}
-        />
-
+      <View style={styles.container}>
+        <Text style={styles.header}>How do I compare?</Text>
+        
+        <View style={styles.body}>
+          <InputLine
+            onChangeText={this.setSize}
+            promptText={'How big is your dick?'}
+            postText={'inches'}
+          />
+          <InputLine
+            onChangeText={this.setCount}
+            promptText={'How many men are in the room?'}
+          />
+        </View>
         <Text> Size: {this.state.dickSize}, Count: {this.state.dickCount}</Text>
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  header: {
+    fontSize: 32,
+    fontWeight: 'bold',
+  },
+  body: {
+    backgroundColor: 'skyblue',
+    padding: 4,
+    borderWidth: 2,
+    borderColor: 'steelblue',
+    borderRadius: 20
+  }
+})
 
 export default InputScreen
