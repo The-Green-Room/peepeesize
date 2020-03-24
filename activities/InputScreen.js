@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {Text, View } from 'react-native'
+import React from 'react';
+import {Text, View, Button } from 'react-native'
 import InputLine from '../components/InputLine.js'
 import styles from '../components/styles.js'
+import { withNavigation } from 'react-navigation'
 
-
-class InputScreen extends Component {
+class InputScreen extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -45,9 +45,14 @@ class InputScreen extends Component {
         </View>
         
         <Text> Size: {this.state.dickSize}, Count: {this.state.dickCount}</Text>
+
+        <Button
+          title="size me up, daddy oWo" 
+          onPress={() => this.props.navigation.navigate('Results')}
+        />
       </View>
     )
   }
 }
 
-export default InputScreen
+export default withNavigation(InputScreen)
