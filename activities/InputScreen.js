@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native'
+import {Text, View } from 'react-native'
 import InputLine from '../components/InputLine.js'
+import styles from '../components/styles.js'
+
 
 class InputScreen extends Component {
   constructor(props) {
@@ -41,29 +43,11 @@ class InputScreen extends Component {
             promptText={'How many men are in the room?'}
           />
         </View>
+        
         <Text> Size: {this.state.dickSize}, Count: {this.state.dickCount}</Text>
       </View>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  header: {
-    fontSize: 32,
-    fontWeight: 'bold',
-  },
-  body: {
-    backgroundColor: 'skyblue',
-    padding: 4,
-    borderWidth: 2,
-    borderColor: 'steelblue',
-    borderRadius: 20
-  }
-})
 
 export default InputScreen
